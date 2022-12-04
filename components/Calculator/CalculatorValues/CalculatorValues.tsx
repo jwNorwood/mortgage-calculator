@@ -9,24 +9,26 @@ interface Props {
 const CalculatorValues = ({
   monthlyPayment,
   interestPaid,
-  totalPaid
+  totalPaid,
 }: Props) => {
-
   console.log(monthlyPayment);
   const monthlyPaymentFormatted = monthlyPayment.toLocaleString("en-US", {
     style: "currency",
-    currency: "USD"
+    currency: "USD",
   });
   const totalInterestPaid = interestPaid[interestPaid.length - 1];
-  const totalInterestPaidFormatted = totalInterestPaid?.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD"
-  });
+  const totalInterestPaidFormatted = totalInterestPaid?.toLocaleString(
+    "en-US",
+    {
+      style: "currency",
+      currency: "USD",
+    }
+  );
 
   const totalAmountPaid = totalPaid[totalPaid.length - 1];
   const totalAmountPaidFormatted = totalAmountPaid?.toLocaleString("en-US", {
     style: "currency",
-    currency: "USD"
+    currency: "USD",
   });
   return (
     <>

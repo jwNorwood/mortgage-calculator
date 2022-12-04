@@ -18,7 +18,7 @@ const useCalculator = () => {
       loanTerm
     );
     setMonthlyPayment(monthlyPayment);
-    
+
     const {
       principalPaid: pp,
       interestPaid: ip,
@@ -138,6 +138,7 @@ const useCalculator = () => {
     const line = d3
       .line()
       .x((d, i) => xScale(i))
+      // @ts-ignore
       .y((d) => yScale(d))
       .curve(d3.curveBasis);
 
