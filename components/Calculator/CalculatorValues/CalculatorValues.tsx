@@ -31,7 +31,7 @@ const CalculatorValues = ({
     currency: "USD",
   });
   return (
-    <>
+    <div>
       <div className="pb-1">
         <strong>Monthly Payment</strong>:{" "}
         {monthlyPaymentFormatted ? monthlyPaymentFormatted : "0.00"}
@@ -44,7 +44,7 @@ const CalculatorValues = ({
         <strong>Total Amount Paid</strong>:{" "}
         {totalAmountPaidFormatted ? totalAmountPaidFormatted : "0.00"}
       </div>
-    </>
+    </div>
   );
 };
 

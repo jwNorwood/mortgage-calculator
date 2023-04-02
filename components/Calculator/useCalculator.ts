@@ -1,17 +1,17 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import * as d3 from "d3";
 
 const useCalculator = () => {
-  const [interestRate, setInterestRate] = React.useState(3.6);
-  const [loanAmount, setLoanAmount] = React.useState(100000);
-  const [loanTerm, setLoanTerm] = React.useState(30);
+  const [interestRate, setInterestRate] = useState(3.6);
+  const [loanAmount, setLoanAmount] = useState(100000);
+  const [loanTerm, setLoanTerm] = useState(30);
 
-  const [principalPaid, setPrincipalPaid] = React.useState([]);
-  const [interestPaid, setInterestPaid] = React.useState([]);
-  const [totalPaid, setTotalPaid] = React.useState([]);
-  const [monthlyPayment, setMonthlyPayment] = React.useState(0);
+  const [principalPaid, setPrincipalPaid] = useState([]);
+  const [interestPaid, setInterestPaid] = useState([]);
+  const [totalPaid, setTotalPaid] = useState([]);
+  const [monthlyPayment, setMonthlyPayment] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const monthlyPayment = calculateMonthlyPayment(
       loanAmount,
       interestRate,
@@ -117,24 +117,6 @@ const useCalculator = () => {
 
     const yAxisG = g.append("g").call(yAxis);
 
-    xAxisG
-      .append("text")
-      .attr("class", "axis-label")
-      .attr("y", 40)
-      .attr("x", innerWidth / 2)
-      .attr("fill", "black")
-      .text("Months");
-
-    yAxisG
-      .append("text")
-      .attr("class", "axis-label")
-      .attr("y", -40)
-      .attr("x", -innerHeight / 2)
-      .attr("fill", "black")
-      .attr("transform", `rotate(-90)`)
-      .attr("text-anchor", "middle")
-      .text("Amount");
-
     const line = d3
       .line()
       .x((d, i) => xScale(i))
@@ -176,7 +158,7 @@ const useCalculator = () => {
     createGraph();
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     updateGraph();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [monthlyPayment]);

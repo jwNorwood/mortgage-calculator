@@ -19,19 +19,19 @@ const Inputs = ({
 }: Props) => {
   return (
     <div
-      className="flex flex-1 flex-col justify-start mr-8 pr-8 
-        border-r-2 border-gray-200"
+      className="flex flex-col justify-start pr-8 mr-8 border-r-2 border-gray-200"
     >
       <div className="flex flex-col pb-2">
-        <label htmlFor="interestRate">Interest Rate</label>
+        <label htmlFor="interestRate">Interest Rate %</label>
         <input
           type="number"
           name="interestRate"
           id="interestRate"
           step={0.01}
           value={interestRate}
-          className="border-2 border-gray-200 rounded-md px-2 py-1"
+          className="px-2 py-1 border-2 border-gray-200 rounded-md"
           onChange={(e) => onInterestRateChange(Number(e.target.value))}
+          min={0}
         />
       </div>
       <div className="flex flex-col pb-2">
@@ -40,9 +40,10 @@ const Inputs = ({
           type="number"
           name="loanAmount"
           id="loanAmount"
-          className="border-2 border-gray-200 rounded-md px-2 py-1"
+          className="px-2 py-1 border-2 border-gray-200 rounded-md"
           value={loanAmount}
           onChange={(e) => onLoanAmountChange(Number(e.target.value))}
+          min={0}
         />
       </div>
       <div className="flex flex-col pb-2">
@@ -51,9 +52,10 @@ const Inputs = ({
           type="number"
           name="loanTerm"
           id="loanTerm"
-          className="border-2 border-gray-200 rounded-md px-2 py-1"
+          className="px-2 py-1 border-2 border-gray-200 rounded-md"
           value={loanTerm}
           onChange={(e) => onLoanTermChange(Number(e.target.value))}
+          min={0}
         />
       </div>
     </div>

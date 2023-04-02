@@ -2,11 +2,9 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="">
-      <div className="max-w-7xl mx-auto py-6">
-        <h1 className="text-3xl font-bold leading-tight text-gray-900">
-          Mortgage Rate Calculator
-        </h1>
+    <header className="py-10">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-bold tracking-tight text-white">Mortgage Rate Calculator</h1>
       </div>
     </header>
   );
