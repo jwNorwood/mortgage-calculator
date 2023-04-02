@@ -10,7 +10,13 @@ const Menu = () => {
         <div className="flex items-center justify-between h-16 px-4 sm:px-0">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Image src="/images/avatar.png" alt="Jacob Norwood" width={40} height={40} className="w-8 h-8 rounded-full"/>
+              <Image
+                src="/images/avatar.png"
+                alt="Jacob Norwood"
+                className="w-8 h-8 rounded-full"
+                width={32}
+                height={32}
+              />
             </div>
             <div className="hidden md:block">
               <div className="flex items-baseline ml-10 space-x-4">
